@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Apis from "../allTabs/Apis";
 import Limits from "../allTabs/Limits";
 const Tabs = () => {
