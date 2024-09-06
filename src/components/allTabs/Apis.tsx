@@ -1,8 +1,11 @@
+
 const Apis = () => {
+  
   return (
     <div className="FirstTab">
-      <p>My Apis</p>
-    </div>
+    <p>My API's</p>
+  </div>
   );
 };
+
 export default Apis;

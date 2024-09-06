@@ -1,6 +1,5 @@
 import './App.css'
 import Tabs from './components/tabComponent/Tabs';
-
 function App() {
 
   return (
@@ -8,7 +7,6 @@ function App() {
       <div className="Container_App">
        <Tabs/>
       </div>
-    
     </>
   )
 }
