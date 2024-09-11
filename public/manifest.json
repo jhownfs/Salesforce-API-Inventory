@@ -7,16 +7,28 @@
      "32": "logo_icon.png"
    },
   "permissions": [
-      "activeTab",
-      "scripting",
-      "cookies"
+      "cookies",
+      "storage"
+
    ],
    "action": {
       "default_popup": "index.html"
    },
    "host_permissions": [
-      "https://*/*",
-      "https://*/*"
-   ]
+      "https://*.salesforce.com/*",
+      "https://*.salesforce-setup.com/*",
+      "https://*.force.com/*",
+      "https://*.cloudforce.com/*",
+      "https://*.visualforce.com/*",
+      "https://*.sfcrmapps.cn/*",
+      "https://*.sfcrmproducts.cn/*",
+      "https://*.salesforce.mil/*",
+      "https://*.force.mil/*",
+      "https://*.cloudforce.mil/*",
+      "https://*.visualforce.mil/*",
+      "https://*.crmforce.mil/*",
+      "https://*.force.com.mcas.ms/*"
+   ],
+   "all_frames": true
 }
 
