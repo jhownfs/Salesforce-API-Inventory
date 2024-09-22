@@ -1,34 +1,73 @@
 {
   "name": "Salesforce API Inventory",
-  "description": "Salesforce non-official extension to map API's integration inside a organization",
+  "description": "Salesforce non-official extension to map API's integration inside an organization",
   "version": "0.0.1",
   "manifest_version": 3,
   "icons": {
-     "32": "logo_icon.png"
+     "16": "logo_icon.png",
+     "32": "logo_icon.png",
+     "128": "logo_icon.png"
    },
-  "permissions": [
-      "cookies",
-      "storage"
-
-   ],
    "action": {
       "default_popup": "index.html"
    },
+  "permissions": [
+      "cookies",
+      "storage",
+      "tabs",
+      "scripting",
+      "activeTab"
+
+   ],
+   "background":{
+      "service_worker": "assets/background.js",
+      "type": "module"
+    },
    "host_permissions": [
       "https://*.salesforce.com/*",
       "https://*.salesforce-setup.com/*",
-      "https://*.force.com/*",
+      "https://*.visual.force.com/*",
+      "https://*.vf.force.com/*",
+      "https://*.lightning.force.com/*",
       "https://*.cloudforce.com/*",
       "https://*.visualforce.com/*",
       "https://*.sfcrmapps.cn/*",
       "https://*.sfcrmproducts.cn/*",
       "https://*.salesforce.mil/*",
-      "https://*.force.mil/*",
+      "https://*.visual.force.mil/*",
+      "https://*.vf.force.mil/*",
+      "https://*.lightning.force.mil/*",
       "https://*.cloudforce.mil/*",
       "https://*.visualforce.mil/*",
       "https://*.crmforce.mil/*",
-      "https://*.force.com.mcas.ms/*"
+      "https://*.lightning.force.com.mcas.ms/*"
    ],
-   "all_frames": true
+   "content_scripts": [
+      {
+         "matches": [
+            "https://*.salesforce.com/*",
+            "https://*.salesforce-setup.com/*",
+            "https://*.visual.force.com/*",
+            "https://*.vf.force.com/*",
+            "https://*.lightning.force.com/*",
+            "https://*.cloudforce.com/*",
+            "https://*.visualforce.com/*",
+            "https://*.sfcrmapps.cn/*",
+            "https://*.sfcrmproducts.cn/*",
+            "https://*.salesforce.mil/*",
+            "https://*.visual.force.mil/*",
+            "https://*.vf.force.mil/*",
+            "https://*.lightning.force.mil/*",
+            "https://*.cloudforce.mil/*",
+            "https://*.visualforce.mil/*",
+            "https://*.crmforce.mil/*",
+            "https://*.lightning.force.com.mcas.ms/*"
+         ],
+         "all_frames": true,
+         "js": [
+            "assets/content.js"
+         ]
+      }
+   ]
 }
 

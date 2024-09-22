@@ -5,15 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build --config vite.config.ts && vite build --config vite-content.config.ts && vite build --config vite-background.config.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@types/jsforce": "^1.11.5",
+    "axios": "^1.7.7",
+    "js-cookie": "^3.0.5",
     "jsforce": "^3.4.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "stream-browserify": "^3.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -27,6 +30,7 @@
     "globals": "^15.9.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-node-polyfills": "^0.22.0"
   }
 }

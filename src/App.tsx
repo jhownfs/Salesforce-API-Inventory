@@ -1,8 +1,9 @@
 import './App.css'
 import Tabs from './components/tabComponent/Tabs';
-function App() {
 
-  return (
+function App() {
+  
+ return (
     <>
       <div className="Container_App">
        <Tabs/>
