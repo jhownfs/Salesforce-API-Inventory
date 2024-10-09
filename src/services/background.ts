@@ -1,15 +1,14 @@
 // src\services\background.ts
 
-let cookieSessionId: string;
-
 chrome.runtime.onMessage.addListener((request,sender, sendResponse) => {
   if (request.sessionIDSF !== undefined) {
-   cookieSessionId = request.sessionIDSF;
    sendResponse({ sessionIDSF: request.sessionIDSF });
   }
-
-  if(request.message === "ready") {
-    sendResponse({ sessionIDSF: cookieSessionId });
+ console.log('request', request);
+  if(request.message === "getSession") {
+    chrome.cookies.get({ url: request.sfHost, name: 'sid' }, sessionCookie => {
+      sendResponse(sessionCookie.value)
+    })
   }
 });
 
